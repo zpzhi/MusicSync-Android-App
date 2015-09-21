@@ -1,0 +1,53 @@
+package com.example.musicsync;
+
+import android.os.Bundle;
+import android.app.Activity;
+import android.content.Intent;
+import android.view.Menu;
+import android.view.View;
+import android.widget.Button;
+
+public class HomeActivity extends Activity {
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_home);
+		
+		Button b_MyGroup = (Button) findViewById(R.id.b_mygroup);
+		b_MyGroup.setOnClickListener(new View.OnClickListener() {
+		    public void onClick(View v) {
+		    	Intent i_MyGroup = new Intent(HomeActivity.this, MyGroupActivity.class);
+		    	HomeActivity.this.startActivity(i_MyGroup);
+		    }
+		});
+        Button b_JoinGroup = (Button) findViewById(R.id.button2);
+        b_JoinGroup.setOnClickListener(new View.OnClickListener() {
+		    public void onClick(View v) {
+		    	Intent i_JoinGroup = new Intent(HomeActivity.this, GroupListActivity.class);
+		    	HomeActivity.this.startActivity(i_JoinGroup);
+		    }
+		});
+        Button b_MyList = (Button) findViewById(R.id.button3);
+        b_MyList.setOnClickListener(new View.OnClickListener() {
+		    public void onClick(View v) {
+		    	Intent i_MyList = new Intent(HomeActivity.this, MyListActivity.class);
+		    	HomeActivity.this.startActivity(i_MyList);
+		    }
+		});
+        Button b_Instruction = (Button) findViewById(R.id.button4);
+        b_Instruction.setOnClickListener(new View.OnClickListener() {
+		    public void onClick(View v) {
+		    	Intent i_Instruction = new Intent(HomeActivity.this, InstructionActivity.class);
+		    	HomeActivity.this.startActivity(i_Instruction);
+		    }
+		});
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.home, menu);
+		return true;
+	}
+}

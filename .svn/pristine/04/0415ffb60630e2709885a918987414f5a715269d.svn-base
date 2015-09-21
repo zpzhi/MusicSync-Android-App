@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item android:id="@+id/home" android:title="@string/Label_Home"
+          android:showAsAction="always"></item>
+    <item android:id="@+id/grouplist" android:title="@string/Label_GroupList"
+          android:showAsAction="always"></item>
+    <item android:id="@+id/more" android:title="@string/Label_More"
+          android:showAsAction="always"></item>
+    
+
+</menu>

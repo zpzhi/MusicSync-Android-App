@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.musicsync"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="9"
+        android:targetSdkVersion="18" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.example.musicsync.HomeActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:uiOptions="splitActionBarWhenNarrow"
+            android:name="com.example.musicsync.MyGroupActivity"
+            android:label="@string/Label_MyGroup" >
+        </activity>
+        <activity
+            android:uiOptions="splitActionBarWhenNarrow"
+            android:name="com.example.musicsync.CreateGroupActivity"
+            android:label="@string/Label_CreateGroup" >
+        </activity>
+        <activity
+            android:uiOptions="splitActionBarWhenNarrow"
+            android:name="com.example.musicsync.GroupListActivity"
+            android:label="@string/Label_JoinGroup" >
+        </activity>
+        <activity
+            android:uiOptions="splitActionBarWhenNarrow"
+            android:name="com.example.musicsync.MyListActivity"
+            android:label="@string/Label_MyList" >
+        </activity>
+        <activity
+            android:uiOptions="splitActionBarWhenNarrow"
+            android:name="com.example.musicsync.InstructionActivity"
+            android:label="@string/Label_Instruction" >
+        </activity>
+    </application>
+
+</manifest>

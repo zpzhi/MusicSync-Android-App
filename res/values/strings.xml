@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Music Sync</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="Label_GroupList">Group List</string>
+    <string name="Label_Home">Home</string>
+    <string name="Label_More">More</string>
+    <string name="Label_CreateGroup">Create Group</string>
+    <string name="Label_ActivateGroup">Activate Group</string>
+    <string name="Label_GroupName">Group Name: </string>
+    <string name="Label_GroupNum">Member Number: </string>
+    <string name="Label_MusicListName">Music Track: </string>
+    <string name="Label_ChooseList">Choose List</string>
+    <string name="Label_Confirm">Confirm</string>
+    <string name="Label_Cancel">Cancel</string>
+    <string name="Label_MyList">My List</string>
+    <string name="Label_JoinGroup">Join Group</string>
+    <string name="Label_SongList">Song List</string>
+    <string name="Label_GroupDetail">Group Detail</string>
+    <string name="Label_Back">Back</string>
+    <string name="Label_Join">Join</string>
+    <string name="Label_Edit">Edit</string>
+    <string name="Label_Remove">Remove</string>
+    <string name="Label_EditList">Edit List</string>
+    <string name="Label_ListDetail">List Detail</string>
+    <string name="Label_ListName">"List Name: "</string>
+    <string name="Label_Instruction">Instruction</string>
+    <string name="Label_MyGroup">My Group</string>
+    <string name="Warning_NoGroup">You haven\'t create a Group yet.</string>
+    <string name="Warning_NoName">You must enter the name.</string>
+    <string name="Warning_NoList">You must choose one list.</string>
+
+    
+     <string name="btn_send">Sync Music</string>
+     <string name="btn_play">Play Music</string>
+    <string name="txt_hint">Type Message</string>
+</resources>

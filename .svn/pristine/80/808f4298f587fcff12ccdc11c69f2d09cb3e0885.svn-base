@@ -1,0 +1,125 @@
+package com.example.musicsync;
+
+import java.util.ArrayList;
+import android.os.Bundle;
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ListView;
+import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.Toast;
+
+public class MyGroupActivity extends Activity {
+
+	private SharedPreferences myPreference;
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_mygroup);
+	
+		//get preference
+		myPreference = getSharedPreferences("MyGroup", 0);
+		
+		if (myPreference.getString("GroupName", null) == null){ //no preference exist, create new one
+			
+			// disable Text GroupName, GroupNum, List_MusicList begin
+			TextView Text_GroupName = (TextView) findViewById(R.id.label_groupname);
+			Text_GroupName.setVisibility(8);
+			TextView Text_GroupNum = (TextView) findViewById(R.id.label_groupnum);
+			Text_GroupNum.setVisibility(8);
+			ListView List_MusicList = (ListView) findViewById(R.id.list_musiclist);
+			List_MusicList.setVisibility(8);
+			// disable Text GroupName, GroupNum, List_MusicList end
+			
+			// set create group button begin
+			Button CreateGroup = (Button) findViewById(R.id.b_creategroup);
+			CreateGroup.setOnClickListener(new View.OnClickListener() {
+			    public void onClick(View v) {
+			    	Intent i_CreateGroup = new Intent(MyGroupActivity.this, CreateGroupActivity.class);
+			    	MyGroupActivity.this.startActivity(i_CreateGroup);
+			    }
+			});
+			// set create group button end
+		}
+		else{ //preference exists, set information
+			
+			// disable button, warning begin
+			Button CreateGroup = (Button) findViewById(R.id.b_creategroup);
+			CreateGroup.setEnabled(false);
+			CreateGroup.setVisibility(8);
+			TextView Warning_NoGroup = (TextView) findViewById(R.id.warning_nogroup);
+			Warning_NoGroup.setVisibility(8);
+			// disable button, warning begin
+			
+			// get information from preference begin
+			String GroupName = myPreference.getString("GroupName", null);
+			int GroupNum = myPreference.getInt("GroupNum", 0);
+			String MusicList = myPreference.getString("MusicList", null);
+			// get information from preference end
+			
+			// set information begin
+			TextView Text_GroupName = (TextView) findViewById(R.id.label_groupname);
+			Text_GroupName.setText("Group Name: " + GroupName);
+			TextView Text_GroupNum = (TextView) findViewById(R.id.label_groupnum);
+			Text_GroupNum.setText(String.valueOf("Member Number: " + GroupNum));
+			ListView List_MusicList = (ListView) findViewById(R.id.list_musiclist);
+
+			ArrayList<String> myList = new ArrayList<String>();
+
+			for (int i = 0; i < 1; i++) {
+				// String MusicName = myPreference.getString( MusicList +"_" +
+				// "i" , null);
+				myList.add("Music track: " + MusicList);
+			}
+
+			ArrayAdapter<String> myListAdapter = new ArrayAdapter<String>(this,
+					android.R.layout.simple_list_item_1, myList);
+			List_MusicList.setAdapter(myListAdapter);
+			// set information end
+		}
+
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		if (myPreference.getString("GroupName", null) != null){
+			getMenuInflater().inflate(R.menu.menu_mygroup, menu);
+		}
+		return true;
+	}
+
+	public boolean onOptionsItemSelected(MenuItem item) {
+		// Handle presses on the action bar items
+		switch (item.getItemId()) {
+		case R.id.editGroup:
+			Intent intent = new Intent(this, CreateGroupActivity.class);
+			startActivity(intent);
+			return true;
+
+		case R.id.removeGroup:
+			SharedPreferences preferences = getSharedPreferences("MyGroup", 0);
+			preferences.edit().clear().commit();
+			showToast(this, "Group has been cleared", 3);
+			Intent intent1 = new Intent(this, MyGroupActivity.class);
+			startActivity(intent1);
+			return true;
+		default:
+			return super.onOptionsItemSelected(item);
+		}
+	}
+
+	public static void showToast(Context context, String message, int duration) {
+		Toast toast = Toast.makeText(context, message, duration);
+		toast.show();
+	}
+
+}

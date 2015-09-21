@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:background="@drawable/ic_bgimage1">
+
+    <TextView
+        android:id="@+id/label_groupname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="15dp"
+        android:text="@string/Label_GroupName"
+        android:textColor="#FFFFFF"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/label_groupnum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/label_groupname"
+        android:layout_marginTop="17dp"
+        android:text="@string/Label_GroupNum"
+        android:textColor="#FFFFFF"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+    
+    <TextView
+        android:id="@+id/label_musiclist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/label_groupnum"
+        android:layout_marginTop="20dp" 
+        android:text="@string/Label_MusicListName"
+        android:textColor="#FFFFFF"
+        android:textAppearance="?android:attr/textAppearanceLarge"/>
+    
+    <ListView
+        android:id="@+id/list_musictrack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/label_musiclist"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="20dp" />
+    
+    <TextView
+        android:id="@+id/warning_nogroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:text="@string/Warning_NoGroup"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <Button
+        android:id="@+id/b_creategroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/warning_nogroup"
+        android:layout_centerHorizontal="true"
+        android:textColor="#FFFFFF"
+        android:text="@string/Label_CreateGroup" />
+    
+    <Button
+        android:id="@+id/b_activategroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/list_musictrack"
+        android:layout_centerHorizontal="true"
+        android:textColor="#FFFFFF"
+        android:text="@string/Label_ActivateGroup" />
+    
+</RelativeLayout>

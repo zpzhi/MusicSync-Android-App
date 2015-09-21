@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    
+    <item android:id="@+id/confirm" android:title="@string/Label_Confirm" android:showAsAction="always"></item>
+    <item android:id="@+id/cancel" android:title="@string/Label_Cancel" android:showAsAction="always"></item>
+    
+
+</menu>
